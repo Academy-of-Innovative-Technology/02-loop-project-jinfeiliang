@@ -5,13 +5,17 @@ let End = 0;
 let Step = 1;
 
 let Get_HTML_Template = (number, color) => {
+  let Plurality = "";
+  if (number > 1){
+    Plurality = "s";
+  }
   let HTML = `
     <div class="Message">
         <p>
-          <span style="color: ${color};">${number}</span> bottles of beer on the wall, <span style="color: ${color};">${number}</span> bottles of beer. Take one down and
+          <span style="color: ${color};">${number}</span> bottle${Plurality} of 🍺 on the 🧱, <span style="color: ${color};">${number}</span> bottle${Plurality} of 🍺.<br> Take one down and
           pass it around, <span style="color: ${color};">${
     number - 1
-  }</span> bottles of beer on the wall.
+  }</span> bottle${Plurality} of 🍺 on the 🧱.
         </p>
     </div>`;
   return HTML;
@@ -46,7 +50,7 @@ function Start_Song() {
         let Not_Enough_HTML = `
     <div class="Message">
         <p>
-          ‼️ There's no more bottles of beer on the wall, there's no more bottles of beer. 😭 Help me now, 🏃 to the liquor store to buy 99 bottles of beer.
+          ‼️ There's no more bottles of 🍺 on the 🧱, there's no more bottles of 🍺. <br>😭 Help me now, 🏃 to the liquor store to buy 99 bottles of 🍺.
         </p>
     </div>`;
 
